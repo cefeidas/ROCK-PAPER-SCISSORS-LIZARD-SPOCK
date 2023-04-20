@@ -20,7 +20,7 @@ h1 {
 }
 
 p {
-    margin: 1rem 0;
+    margin: 2rem 2rem;
 }
 
 .content-embedded-video {
@@ -55,6 +55,24 @@ button img {
     height: 50px;
 }
 
+#start-btn {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: #f77c33;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+#start-btn:hover {
+    background-color: #e56b23;
+}
+
+.hidden {
+    display: none;
+}
+
 @media (max-width: 600px) {
     .responsive-iframe {
         width: 100%;
@@ -65,7 +83,6 @@ button img {
         margin: 1rem 0.5rem;
     }
 
-    .hidden {
-        display: none;
-    }
+    
 }
+
