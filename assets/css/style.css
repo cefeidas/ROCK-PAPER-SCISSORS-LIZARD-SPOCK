@@ -64,4 +64,8 @@ button img {
     button {
         margin: 1rem 0.5rem;
     }
+
+    .hidden {
+        display: none;
+    }
 }
