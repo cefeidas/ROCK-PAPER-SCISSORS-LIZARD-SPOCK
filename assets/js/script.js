@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     const startBtn = document.getElementById('start-btn');
-    const imageButtons = document.querySelectorAll('.hidden');
+    const instructions = document.getElementById('Instructions');
+    const roundOne = document.getElementById('RoundOne');
 
     startBtn.addEventListener('click', function () {
-        imageButtons.forEach(function (button) {
-            button.classList.remove('hidden');
-        });
-        startBtn.classList.add('hidden');
+        roundOne.classList.remove('hidden');
+        instructions.classList.add('hidden');
     });
 });

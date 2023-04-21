@@ -11,49 +11,53 @@
     <title>ROCK, PAPER, SCISSORS, LIZARD, SPOCK</title>    
 </head>
 <body>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rock, Paper, Scissors, Lizard, Spock</title>
-        <!-- Add your CSS and JavaScript files here, if needed -->
-    </head>
-    <body>
-        <header>
-            <h1>ROCK, PAPER, SCISSORS, LIZARD, SPOCK</h1>
-        </header>
     
-        <p>This is an online version of the game: ROCK, PAPER, SCISSORS, LIZARD, SPOCK.</p>
-        <p>If you are unfamiliar with the rules of the game, please watch this tutorial:</p>
-        <div class="content-embedded-video">
-            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/zjoVuV8EeOU" title="Game explanation">
-            </iframe>
+    <header>
+        <h1>ROCK, PAPER, SCISSORS, LIZARD, SPOCK</h1>
+    </header>
+        <div id="Instructions">        
+            <section>
+                <p>This is an online version of the game: ROCK, PAPER, SCISSORS, LIZARD, SPOCK.</p>
+                <p>If you are unfamiliar with the rules of the game, please watch this tutorial:</p>
+            </section>
+            <section class="content-embedded-video">
+                <iframe class="responsive-iframe" src="https://www.youtube.com/embed/zjoVuV8EeOU" title="Game explanation">
+                </iframe>
+            </section>
+            <section>
+                <p>You will compete against the computer in a series of matches. Each match consists of 5 rounds, and you must score higher than your opponent to win the match. Victory in a match will lead to a stronger opponent.</p>
+                <p>If you manage to defeat three opponents in a row, you will win the game. However, a single loss will result in losing all your progress.</p>
+                <p>When you're prepared, click the Start button to begin the game.</p>
+            </section>
+            <section>
+                <button id="start-btn">Start</button>
+            </section>
         </div>
-        <div>
-            <p>You will compete against the computer in a series of matches. Each match consists of 5 rounds, and you must score higher than your opponent to win the match. Victory in a match will lead to a stronger opponent.</p>
-            <p>If you manage to defeat three opponents in a row, you will win the game. However, a single loss will result in losing all your progress.</p>
-            <p>When you're prepared, click the Start button to begin the game.</p>
-        </div>
-
-        <div>
-            <button id="start-btn">Start</button>
-        </div>
-        
-        <div class="hidden">
-        <button>
-            <img src="assets/images/Rock.JPG" alt="Rock">
-        </button>
-        <button>
-            <img src="assets/images/Paper.JPG" alt="Paper">
-        </button>
-        <button>
-            <img src="assets/images/Scissors.JPG" alt="Scissors">
-        </button>
-        <button>
-            <img src="assets/images/Lizard.JPG" alt="Lizard">
-        </button>
-        <button>
-            <img src="assets/images/Spock.JPG" alt="Spock">
-        </button>
+            <div id="RoundOne" class='hidden'>
+                <section>
+                    <p>Round One:</p>
+                    <p>Disabled pidgeon!!</p>
+                </section>
+                
+                <section>
+                    <p>What would you chose to win?</p>
+                    <p>Some people say the pidgeon is a hardcore Star trek fan...</p>
+                    <button>
+                        <img src="assets/images/Rock.JPG" alt="Rock">
+                    </button>
+                    <button>
+                        <img src="assets/images/Paper.JPG" alt="Paper">
+                    </button>
+                    <button>
+                        <img src="assets/images/Scissors.JPG" alt="Scissors">
+                    </button>
+                    <button>
+                        <img src="assets/images/Lizard.JPG" alt="Lizard">
+                    </button>
+                    <button>
+                        <img src="assets/images/Spock.JPG" alt="Spock">
+                    </button>
+                </section>
         </div>
     
 
