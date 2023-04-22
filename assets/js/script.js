@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const startBtn = document.getElementById('start-btn');
     const instructions = document.getElementById('Instructions');
-    const roundOne = document.getElementById('RoundOne');
+    const roundOne = document.getElementById('roundOne');
 
     startBtn.addEventListener('click', function () {
         roundOne.classList.remove('hidden');
