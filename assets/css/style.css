@@ -19,8 +19,37 @@ h1 {
     margin: 0;
 }
 
+h2 {
+    margin: 1rem;
+}
+
 p {
     margin: 2rem 2rem;
+}
+
+#RoundOne {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+.player-options {
+    width: 30%;
+}
+
+.villain-image {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.villain-options {
+    width: 30%;
 }
 
 .content-embedded-video {
