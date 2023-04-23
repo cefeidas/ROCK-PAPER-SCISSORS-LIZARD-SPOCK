@@ -93,11 +93,11 @@ function gameTracker(result) {
 }
 
 /*In order to feed every function with data, I created the first source of info. It will be player choice, given by pressing any of the numbers available*/
-document.getElementById("rock-button").addEventListener("click", () => gameEventHandler(1));
-document.getElementById("paper-button").addEventListener("click", () => gameEventHandler(2));
-document.getElementById("scissors-button").addEventListener("click", () => gameEventHandler(3));
-document.getElementById("lizard-button").addEventListener("click", () => gameEventHandler(4));
-document.getElementById("spock-button").addEventListener("click", () => gameEventHandler(5));
+document.getElementById("rockButton").addEventListener("click", () => gameEventHandler(1));
+document.getElementById("paperButton").addEventListener("click", () => gameEventHandler(2));
+document.getElementById("scissorsButton").addEventListener("click", () => gameEventHandler(3));
+document.getElementById("lizardButton").addEventListener("click", () => gameEventHandler(4));
+document.getElementById("spockButton").addEventListener("click", () => gameEventHandler(5));
 
 function gameEventHandler(playerChoice) {
   const villainChoiceResult = villainChoice([5], []);
@@ -105,10 +105,10 @@ function gameEventHandler(playerChoice) {
   const gameStatus = gameTracker(result);
 
   if (gameStatus === "Next Round!") {
-    document.getElementById("next-round").classList.remove("hidden");
+    document.getElementById("nextRound").classList.remove("hidden");
   } else if (gameStatus === "Game over") {
-    document.getElementById("game-over").classList.remove("hidden");
+    document.getElementById("gameOver").classList.remove("hidden");
   } else {
-    document.getElementById("game-status").innerText = gameStatus;
+    document.getElementById("gameStatus").innerText = gameStatus;
   }
 }

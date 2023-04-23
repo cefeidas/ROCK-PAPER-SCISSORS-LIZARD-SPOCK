@@ -56,7 +56,7 @@ button:hover {
     background-color: #555;
 }
 
-#start-btn {
+.screenChangeButton {
     font-size: 1.5rem;
     padding: 1rem 2rem;
     background-color: #f77c33;
