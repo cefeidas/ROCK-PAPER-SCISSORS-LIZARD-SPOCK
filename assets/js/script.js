@@ -180,6 +180,16 @@ document.getElementById("spockButton").addEventListener("click", function () {
   showPidgeonImage(pidgeonChoice);
 });
 
+document.getElementById("gameOver").addEventListener("click", function() {
+  location.reload();
+});
+
+const roundTwo = document.getElementById("roundTwo");
+document.getElementById("nextRound").addEventListener("click", function() {
+  roundTwo.classList.remove('hidden');
+});
+
+
 function gameEventHandler(playerChoice) {
   const villainChoiceResult = villainChoice([5], []);
   const result = whoWins(playerChoice, villainChoiceResult);
