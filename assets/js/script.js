@@ -91,3 +91,24 @@ function gameTracker(result) {
     return `Victories: ${victories}, Loses: ${loses}`;
   }
 }
+
+/*In order to feed every function with data, I created the first source of info. It will be player choice, given by pressing any of the numbers available*/
+document.getElementById("rock-button").addEventListener("click", () => gameEventHandler(1));
+document.getElementById("paper-button").addEventListener("click", () => gameEventHandler(2));
+document.getElementById("scissors-button").addEventListener("click", () => gameEventHandler(3));
+document.getElementById("lizard-button").addEventListener("click", () => gameEventHandler(4));
+document.getElementById("spock-button").addEventListener("click", () => gameEventHandler(5));
+
+function gameEventHandler(playerChoice) {
+  const villainChoiceResult = villainChoice([5], []);
+  const result = whoWins(playerChoice, villainChoiceResult);
+  const gameStatus = gameTracker(result);
+
+  if (gameStatus === "Next Round!") {
+    document.getElementById("next-round").classList.remove("hidden");
+  } else if (gameStatus === "Game over") {
+    document.getElementById("game-over").classList.remove("hidden");
+  } else {
+    document.getElementById("game-status").innerText = gameStatus;
+  }
+}
