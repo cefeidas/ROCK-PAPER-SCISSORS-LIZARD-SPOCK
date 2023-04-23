@@ -98,46 +98,86 @@ const playerRoundOneChoicePaper = document.getElementById('playerRoundOneChoiceP
 const playerRoundOneChoiceScissors = document.getElementById('playerRoundOneChoiceScissors')
 const playerRoundOneChoiceLizard = document.getElementById('playerRoundOneChoiceLizard')
 const playerRoundOneChoiceSpock = document.getElementById('playerRoundOneChoiceSpock')
+const pidgeonRoundOneChoiceRock = document.getElementById("pidgeonRoundOneChoiceRock");
+const pidgeonRoundOneChoicePaper = document.getElementById("pidgeonRoundOneChoicePaper");
+const pidgeonRoundOneChoiceScissors = document.getElementById("pidgeonRoundOneChoiceScissors");
+const pidgeonRoundOneChoiceLizard = document.getElementById("pidgeonRoundOneChoiceLizard");
+const pidgeonRoundOneChoiceSpock = document.getElementById("pidgeonRoundOneChoiceSpock");
 
-function hideAllImages() {
+
+function hidePlayerImages() {
   playerRoundOneChoiceRock.classList.add('hidden');
   playerRoundOneChoicePaper.classList.add('hidden');
   playerRoundOneChoiceScissors.classList.add('hidden');
   playerRoundOneChoiceLizard.classList.add('hidden');
   playerRoundOneChoiceSpock.classList.add('hidden');
+
+}
+
+function hideVillainImages() {
   pidgeonRoundOneChoiceRock.classList.add('hidden');
-  pigeonRoundOneChoicePaper.classList.add('hidden');
+  pidgeonRoundOneChoicePaper.classList.add('hidden');
   pidgeonRoundOneChoiceScissors.classList.add('hidden');
   pidgeonRoundOneChoiceLizard.classList.add('hidden');
   pidgeonRoundOneChoiceSpock.classList.add('hidden');
 
 }
 
+function showPidgeonImage(choice) {
+  hideVillainImages();
+  switch (choice) {
+    case 1:
+      pidgeonRoundOneChoiceRock.classList.remove('hidden');
+      break;
+    case 2:
+      pidgeonRoundOneChoicePaper.classList.remove('hidden');
+      break;
+    case 3:
+      pidgeonRoundOneChoiceScissors.classList.remove('hidden');
+      break;
+    case 4:
+      pidgeonRoundOneChoiceLizard.classList.remove('hidden');
+      break;
+    case 5:
+      pidgeonRoundOneChoiceSpock.classList.remove('hidden');
+      break;
+  }
+}
+
 document.getElementById("rockButton").addEventListener("click", function () {
-  hideAllImages();
+  hidePlayerImages();
   playerRoundOneChoiceRock.classList.remove('hidden');
   gameEventHandler(1);
-  
+  const pidgeonChoice = villainChoice([5], []);
+  showPidgeonImage(pidgeonChoice);  
 });
 document.getElementById("paperButton").addEventListener("click", function () {
-  hideAllImages();
+  hidePlayerImages();
   playerRoundOneChoicePaper.classList.remove('hidden');
   gameEventHandler(2);
+  const pidgeonChoice = villainChoice([5], []);
+  showPidgeonImage(pidgeonChoice);
 });
 document.getElementById("scissorsButton").addEventListener("click", function () {
-  hideAllImages();
+  hidePlayerImages();
   playerRoundOneChoiceScissors.classList.remove('hidden');
   gameEventHandler(3);
+  const pidgeonChoice = villainChoice([5], []);
+  showPidgeonImage(pidgeonChoice);
 });
 document.getElementById("lizardButton").addEventListener("click", function () {
-  hideAllImages();
+  hidePlayerImages();
   playerRoundOneChoiceLizard.classList.remove('hidden');
   gameEventHandler(4);
+  const pidgeonChoice = villainChoice([5], []);
+  showPidgeonImage(pidgeonChoice);
 });
 document.getElementById("spockButton").addEventListener("click", function () {
-  hideAllImages();
+  hidePlayerImages();
   playerRoundOneChoiceSpock.classList.remove('hidden');
   gameEventHandler(5);
+  const pidgeonChoice = villainChoice([5], []);
+  showPidgeonImage(pidgeonChoice);
 });
 
 function gameEventHandler(playerChoice) {
@@ -146,8 +186,10 @@ function gameEventHandler(playerChoice) {
   const gameStatus = gameTracker(result);
 
   if (gameStatus === "Next Round!") {
-    document.getElementById("nextRound").classList.remove("hidden");
+    document.getElementById("roundOne").classList.add("hidden");
+    document.getElementById("nextRound").classList.remove("hidden");    
   } else if (gameStatus === "Game over") {
+    document.getElementById("roundOne").classList.add("hidden");
     document.getElementById("gameOver").classList.remove("hidden");
   } else {
     document.getElementById("gameStatus").innerText = gameStatus;
