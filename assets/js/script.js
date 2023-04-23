@@ -71,3 +71,23 @@ if (difference % 2 === 1) {
   }
 }
 }
+
+let victories = 0;
+let loses = 0;
+
+function gameTracker(result) {
+/*Each opponet needs to be defeated 3 times in order to win the round. This functiopn will allow the program to track the number of wins and loses.*/
+  if (result === "You win!") {
+    victories++;
+  } else if (result === "You lose!") {
+    loses++;
+  }
+
+  if (victories === 3) {
+    return "Next Round!";
+  } else if (loses === 3) {
+    return "Game over";
+  } else {
+    return `Victories: ${victories}, Loses: ${loses}`;
+  }
+}
