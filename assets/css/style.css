@@ -141,4 +141,13 @@ button:hover {
     z-index: 0;
 }
 
+#playerChoiceImages {
+    text-align: center;
+  }
+
+  #playerChoiceImages .singleImage {
+    width: 20%;
+    height: auto;
+    margin: auto;
+  }
 

@@ -105,6 +105,12 @@ function hideAllImages() {
   playerRoundOneChoiceScissors.classList.add('hidden');
   playerRoundOneChoiceLizard.classList.add('hidden');
   playerRoundOneChoiceSpock.classList.add('hidden');
+  pidgeonRoundOneChoiceRock.classList.add('hidden');
+  pigeonRoundOneChoicePaper.classList.add('hidden');
+  pidgeonRoundOneChoiceScissors.classList.add('hidden');
+  pidgeonRoundOneChoiceLizard.classList.add('hidden');
+  pidgeonRoundOneChoiceSpock.classList.add('hidden');
+
 }
 
 document.getElementById("rockButton").addEventListener("click", function () {
