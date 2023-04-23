@@ -52,7 +52,7 @@ function whoWins(num1, num2) {
 If the difference between both numbers is odd, the bigger one wins
 If the difference between both numbers is even:
 If both numbers are the same, no one wins
-If both numbers are not the same, the smaller one wins*/
+If both numbers are not the same, the smaller one wins. Using that, I created the logic to decide the winner.*/
 const difference = Math.abs(num1 - num2);
   
 if (difference % 2 === 1) { 
