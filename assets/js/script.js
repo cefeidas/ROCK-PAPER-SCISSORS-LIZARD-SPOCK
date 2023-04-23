@@ -93,11 +93,46 @@ function gameTracker(result) {
 }
 
 /*In order to feed every function with data, I created the first source of info. It will be player choice, given by pressing any of the numbers available*/
-document.getElementById("rockButton").addEventListener("click", () => gameEventHandler(1));
-document.getElementById("paperButton").addEventListener("click", () => gameEventHandler(2));
-document.getElementById("scissorsButton").addEventListener("click", () => gameEventHandler(3));
-document.getElementById("lizardButton").addEventListener("click", () => gameEventHandler(4));
-document.getElementById("spockButton").addEventListener("click", () => gameEventHandler(5));
+const playerRoundOneChoiceRock = document.getElementById('playerRoundOneChoiceRock')
+const playerRoundOneChoicePaper = document.getElementById('playerRoundOneChoicePaper')
+const playerRoundOneChoiceScissors = document.getElementById('playerRoundOneChoiceScissors')
+const playerRoundOneChoiceLizard = document.getElementById('playerRoundOneChoiceLizard')
+const playerRoundOneChoiceSpock = document.getElementById('playerRoundOneChoiceSpock')
+
+function hideAllImages() {
+  playerRoundOneChoiceRock.classList.add('hidden');
+  playerRoundOneChoicePaper.classList.add('hidden');
+  playerRoundOneChoiceScissors.classList.add('hidden');
+  playerRoundOneChoiceLizard.classList.add('hidden');
+  playerRoundOneChoiceSpock.classList.add('hidden');
+}
+
+document.getElementById("rockButton").addEventListener("click", function () {
+  hideAllImages();
+  playerRoundOneChoiceRock.classList.remove('hidden');
+  gameEventHandler(1);
+  
+});
+document.getElementById("paperButton").addEventListener("click", function () {
+  hideAllImages();
+  playerRoundOneChoicePaper.classList.remove('hidden');
+  gameEventHandler(2);
+});
+document.getElementById("scissorsButton").addEventListener("click", function () {
+  hideAllImages();
+  playerRoundOneChoiceScissors.classList.remove('hidden');
+  gameEventHandler(3);
+});
+document.getElementById("lizardButton").addEventListener("click", function () {
+  hideAllImages();
+  playerRoundOneChoiceLizard.classList.remove('hidden');
+  gameEventHandler(4);
+});
+document.getElementById("spockButton").addEventListener("click", function () {
+  hideAllImages();
+  playerRoundOneChoiceSpock.classList.remove('hidden');
+  gameEventHandler(5);
+});
 
 function gameEventHandler(playerChoice) {
   const villainChoiceResult = villainChoice([5], []);

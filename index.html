@@ -12,7 +12,10 @@
 </head>
 <body>
     <header>
-        <h1>ROCK, PAPER, SCISSORS, LIZARD, SPOCK</h1><img id="cheatSheet" src="assets/images/cheatsheet.png" alt="Game mechanics cheat-sheet">
+        <div class="header-content">
+            <h1>ROCK, PAPER, SCISSORS, LIZARD, SPOCK</h1>
+            <img id="cheatSheet" src="assets/images/cheatsheet.png" alt="Game mechanics cheat-sheet">
+        </div>
     </header>
     <div id="Instructions">        
         <section>
@@ -46,8 +49,8 @@
         </div>
         <div class="row">
             <section class="col-md-6 player-options">
-                <p>blaudiblau</p>
-                <p>Blibloblubla</p>
+                <p>Click one of the icons below.</p>
+                <p>If you are unsure about the rules, check out the cheat-sheet on the corner of the screen!</p>
                 <div>
                     <button class="custom-button" id="rockButton">
                         <img src="assets/images/Rock.jpg" alt="Rock">
@@ -72,18 +75,6 @@
                         <img id="playerRoundOneChoiceLizard" class="hidden singleImage" src="assets/images/Lizard.jpg" alt="Lizard">
                         <img id="playerRoundOneChoiceSpock" class="hidden singleImage"  src="assets/images/Spock.jpg" alt="Spock">
                     </div>
-                    <div class="hidden">
-                        <p>Rock crushes Scissors</p>
-                        <p>Rock crushes Lizard</p>
-                        <p>Paper covers Rock</p>
-                        <p>Paper disproves Spock</p>
-                        <p>Scissors cuts Paper</p>
-                        <p>Scissors decapitates Lizard</p>
-                        <p>Lizard eats Paper</p>
-                        <p>Lizard poisons Spock</p>
-                        <p>Spock vaporizes Rock</p>
-                        <p>Spock smashes Scissors</p>
-                    </div>
                     <div id="nextRound" class="hidden">
                         <button class="screenChangeButton">Next Round!!!</button>
                     </div>
@@ -95,8 +86,8 @@
             </section>
             <section class="col-md-6 villain-options"> 
                 <div>
-                    <p>Digo algo</p>
-                    <p>Y aqui otra cosa</p>
+                    <p>Your opponent will also chose one.</p>
+                    <p>Behold!</p>
                     <img src="assets/images/Rock.jpg" alt="Rock">
                     <img src="assets/images/Paper.jpg" alt="Paper">
                     <img src="assets/images/Scissors.jpg" alt="Scissors">
@@ -105,6 +96,7 @@
                 </div>
                 <div>
                     <img id="villainRoundOneChoiceSpock" class="hidden singleImage"  src="assets/images/Spock.JPG" alt="Spock">
+                    <br><br>
                 </div>
                 
             </section>
