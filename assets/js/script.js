@@ -47,4 +47,27 @@ const list2 = telepath();
 const result3 = villainChoice(list1, list2);
 console.log("Resultado 3:", result3)
 
-
+function whoWins(num1, num2) {
+/*I found out that the logic behind this game is: 
+If the difference between both numbers is odd, the bigger one wins
+If the difference between both numbers is even:
+If both numbers are the same, no one wins
+If both numbers are not the same, the smaller one wins*/
+const difference = Math.abs(num1 - num2);
+  
+if (difference % 2 === 1) { 
+  if (num1 > num2) {
+    return "You win!";
+  } else {
+    return "You lose!";
+  }
+} else { 
+  if (num1 === num2) {
+    return "Tie!";
+  } else if (num1 < num2) {
+    return "You win!";
+  } else {
+    return "You lose!";
+  }
+}
+}
