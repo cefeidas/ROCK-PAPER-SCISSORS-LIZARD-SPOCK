@@ -185,10 +185,130 @@ document.getElementById("gameOver").addEventListener("click", function() {
 });
 
 const roundTwo = document.getElementById("roundTwo");
-document.getElementById("nextRound").addEventListener("click", function() {
+  document.getElementById("nextRound").addEventListener("click", function() {
+  document.getElementById("nextRound").classList.add("hidden");
   roundTwo.classList.remove('hidden');
 });
 
+
+function gameEventHandler(playerChoice, round) {
+  let villainChoiceResult;
+  if (round === 1) {
+    villainChoiceResult = villainChoice([5], []);
+  } else if (round === 2) {
+    villainChoiceResult = villainChoice(Array.from({length: 5}, (_, i) => i + 1), []);
+  }
+
+  const result = whoWins(playerChoice, villainChoiceResult);
+  const gameStatus = gameTracker(result);
+
+  if (gameStatus === "Next Round!") {
+    if (round === 1) {
+      document.getElementById("roundOne").classList.add("hidden");
+      document.getElementById("nextRound").classList.remove("hidden");
+    } else if (round === 2) {
+      document.getElementById("roundTwo").classList.add("hidden");
+      // Add logic to move to round three here
+    }
+  } else if (gameStatus === "Game over") {
+    document.getElementById("roundOne").classList.add("hidden");
+    document.getElementById("gameOver").classList.remove("hidden");
+  } else {
+    document.getElementById("gameStatus").innerText = gameStatus;
+  }
+}
+
+/*In order to feed every function with data, I created the first source of info. It will be player choice, given by pressing any of the numbers available*/
+const playerRoundTwoChoiceRock = document.getElementById('playerRoundTwoChoiceRock')
+const playerRoundTwoChoicePaper = document.getElementById('playerRoundTwoChoicePaper')
+const playerRoundTwoChoiceScissors = document.getElementById('playerRoundTwoChoiceScissors')
+const playerRoundTwoChoiceLizard = document.getElementById('playerRoundTwoChoiceLizard')
+const playerRoundTwoChoiceSpock = document.getElementById('playerRoundTwoChoiceSpock')
+const evilDieRoundTwoChoiceRock = document.getElementById("evilDieRoundTwoChoiceRock");
+const evilDieRoundTwoChoicePaper = document.getElementById("evilDieRoundTwoChoicePaper");
+const evilDieRoundTwoChoiceScissors = document.getElementById("evilDieRoundTwoChoiceScissors");
+const evilDieRoundTwoChoiceLizard = document.getElementById("evilDieRoundTwoChoiceLizard");
+const evilDieRoundTwoChoiceSpock = document.getElementById("evilDieRoundTwoChoiceSpock");
+
+
+function hidePlayerRoundTwoImages() {
+  playerRoundTwoChoiceRock.classList.add('hidden');
+  playerRoundTwoChoicePaper.classList.add('hidden');
+  playerRoundTwoChoiceScissors.classList.add('hidden');
+  playerRoundTwoChoiceLizard.classList.add('hidden');
+  playerRoundTwoChoiceSpock.classList.add('hidden');
+
+}
+
+function hideEvilDieImages() {
+  evilDieRoundTwoChoiceRock.classList.add('hidden');
+  evilDieRoundTwoChoicePaper.classList.add('hidden');
+  evilDieRoundTwoChoiceScissors.classList.add('hidden');
+  evilDieRoundTwoChoiceLizard.classList.add('hidden');
+  evilDieRoundTwoChoiceSpock.classList.add('hidden');
+
+}
+
+function showEvilDieImage(choice) {
+  hideEvilDieImages();
+  switch (choice) {
+    case 1:
+      evilDieRoundTwoChoiceRock.classList.remove('hidden');
+      break;
+    case 2:
+      evilDieRoundTwoChoicePaper.classList.remove('hidden');
+      break;
+    case 3:
+      evilDieRoundTwoChoiceScissors.classList.remove('hidden');
+      break;
+    case 4:
+      evilDieRoundTwoChoiceLizard.classList.remove('hidden');
+      break;
+    case 5:
+      evilDieRoundTwoChoiceSpock.classList.remove('hidden');
+      break;
+  }
+}
+
+document.getElementById("roundTwoRockButton").addEventListener("click", function () {
+  hidePlayerRoundTwoImages();
+  playerRoundTwoChoiceRock.classList.remove('hidden');
+  gameEventHandler(1, 2);
+  const evilDiceChoice = villainChoice(Array.from({length: 5}, (_, i) => i + 1), []);
+  showEvilDieImage(evilDiceChoice);
+});
+document.getElementById("roundTwoPaperButton").addEventListener("click", function () {
+  hidePlayerRoundTwoImages();
+  playerRoundTwoChoicePaper.classList.remove('hidden');
+  gameEventHandler(1, 2);
+  const evilDiceChoice = villainChoice(Array.from({length: 5}, (_, i) => i + 1), []);
+  showEvilDieImage(evilDiceChoice);
+});
+document.getElementById("roundTwoScissorsButton").addEventListener("click", function () {
+  hidePlayerRoundTwoImages();
+  playerRoundTwoChoiceScissors.classList.remove('hidden');
+  gameEventHandler(1, 2);
+  const evilDiceChoice = villainChoice(Array.from({length: 5}, (_, i) => i + 1), []);
+  showEvilDieImage(evilDiceChoice);
+});
+document.getElementById("roundTwoLizardButton").addEventListener("click", function () {
+  hidePlayerRoundTwoImages();
+  playerRoundTwoChoiceLizard.classList.remove('hidden');
+  gameEventHandler(1, 2);
+  const evilDiceChoice = villainChoice(Array.from({length: 5}, (_, i) => i + 1), []);
+  showEvilDieImage(evilDiceChoice);
+});
+document.getElementById("roundTwoSpockButton").addEventListener("click", function () {
+  hidePlayerRoundTwoImages();
+  playerRoundTwoChoiceSpock.classList.remove('hidden');
+  gameEventHandler(1, 2);
+  const evilDiceChoice = villainChoice(Array.from({length: 5}, (_, i) => i + 1), []);
+  showEvilDieImage(evilDiceChoice);
+});
+
+document.getElementById("gameOver").addEventListener("click", function() {
+  location.reload();
+});
 
 function gameEventHandler(playerChoice) {
   const villainChoiceResult = villainChoice([5], []);
