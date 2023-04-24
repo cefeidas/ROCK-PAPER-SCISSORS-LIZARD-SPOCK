@@ -57,17 +57,17 @@ const difference = Math.abs(num1 - num2);
   
 if (difference % 2 === 1) { 
   if (num1 > num2) {
-    return "You lose!";
-  } else {
     return "You win!";
+  } else {
+    return "You lose!";
   }
 } else { 
   if (num1 === num2) {
     return "Tie!";
   } else if (num1 < num2) {
-    return "You lose!";
-  } else {
     return "You win!";
+  } else {
+    return "You lose!";
   }
 }
 }
@@ -248,44 +248,53 @@ function showEvilDieImage(choice) {
 }
 
 document.getElementById("roundTwoRockButton").addEventListener("click", function () {
+  const randomNum = Math.floor(Math.random() * 5) + 1;
+  const evilDiceChoice = villainChoice([randomNum], []);
+  showEvilDieImage(evilDiceChoice);
+
   hidePlayerRoundTwoImages();
   playerRoundTwoChoiceRock.classList.remove('hidden');
-  roundTwoGameEventHandler(1);
+  roundTwoGameEventHandler(1, evilDiceChoice);
+});
+
+document.getElementById("roundTwoPaperButton").addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 5) + 1;
   const evilDiceChoice = villainChoice([randomNum], []);
   showEvilDieImage(evilDiceChoice);
-});
-document.getElementById("roundTwoPaperButton").addEventListener("click", function () {
+
   hidePlayerRoundTwoImages();
   playerRoundTwoChoicePaper.classList.remove('hidden');
-  roundTwoGameEventHandler(2);
+  roundTwoGameEventHandler(2, evilDiceChoice);
+});
+
+document.getElementById("roundTwoScissorsButton").addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 5) + 1;
   const evilDiceChoice = villainChoice([randomNum], []);
   showEvilDieImage(evilDiceChoice);
-});
-document.getElementById("roundTwoScissorsButton").addEventListener("click", function () {
+
   hidePlayerRoundTwoImages();
   playerRoundTwoChoiceScissors.classList.remove('hidden');
-  roundTwoGameEventHandler(3);
+  roundTwoGameEventHandler(3, evilDiceChoice);
+});
+
+document.getElementById("roundTwoLizardButton").addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 5) + 1;
   const evilDiceChoice = villainChoice([randomNum], []);
   showEvilDieImage(evilDiceChoice);
-});
-document.getElementById("roundTwoLizardButton").addEventListener("click", function () {
+
   hidePlayerRoundTwoImages();
   playerRoundTwoChoiceLizard.classList.remove('hidden');
-  roundTwoGameEventHandler(4);
+  roundTwoGameEventHandler(4, evilDiceChoice);
+});
+
+document.getElementById("roundTwoSpockButton").addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 5) + 1;
   const evilDiceChoice = villainChoice([randomNum], []);
   showEvilDieImage(evilDiceChoice);
-});
-document.getElementById("roundTwoSpockButton").addEventListener("click", function () {
+
   hidePlayerRoundTwoImages();
   playerRoundTwoChoiceSpock.classList.remove('hidden');
-  roundTwoGameEventHandler(5);
-  const randomNum = Math.floor(Math.random() * 5) + 1;
-  const evilDiceChoice = villainChoice([randomNum], []);
-  showEvilDieImage(evilDiceChoice);
+  roundTwoGameEventHandler(5, evilDiceChoice);
 });
 
 document.getElementById("gameOver").addEventListener("click", function() {
@@ -308,8 +317,7 @@ function roundOneGameEventHandler(playerChoice) {
   }
 }
 
-function roundTwoGameEventHandler(playerChoice) {
-  const villainChoiceResult = villainChoice([randomNum], []);
+function roundTwoGameEventHandler(playerChoice, villainChoiceResult) {
   const result = whoWins(playerChoice, villainChoiceResult);
   const gameStatus = gameTracker(result);
 
