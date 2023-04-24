@@ -57,17 +57,17 @@ const difference = Math.abs(num1 - num2);
   
 if (difference % 2 === 1) { 
   if (num1 > num2) {
-    return "You lose!";
-  } else {
     return "You win!";
+  } else {
+    return "You lose!";
   }
 } else { 
   if (num1 === num2) {
     return "Tie!";
   } else if (num1 < num2) {
-    return "You lose!";
-  } else {
     return "You win!";
+  } else {
+    return "You lose!";
   }
 }
 }
@@ -250,7 +250,7 @@ function showEvilDieImage(choice) {
 
 document.getElementById("roundTwoRockButton").addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 5) + 1;
-  const evilDiceChoice = villainChoice([randomNum], []);
+  const evilDiceChoice = randomNum;
   showEvilDieImage(evilDiceChoice);
 
   hidePlayerRoundTwoImages();
@@ -260,7 +260,7 @@ document.getElementById("roundTwoRockButton").addEventListener("click", function
 
 document.getElementById("roundTwoPaperButton").addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 5) + 1;
-  const evilDiceChoice = villainChoice([randomNum], []);
+  const evilDiceChoice = randomNum;
   showEvilDieImage(evilDiceChoice);
 
   hidePlayerRoundTwoImages();
@@ -270,7 +270,7 @@ document.getElementById("roundTwoPaperButton").addEventListener("click", functio
 
 document.getElementById("roundTwoScissorsButton").addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 5) + 1;
-  const evilDiceChoice = villainChoice([randomNum], []);
+  const evilDiceChoice = randomNum;
   showEvilDieImage(evilDiceChoice);
 
   hidePlayerRoundTwoImages();
@@ -280,7 +280,7 @@ document.getElementById("roundTwoScissorsButton").addEventListener("click", func
 
 document.getElementById("roundTwoSpockButton").addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 5) + 1;
-  const evilDiceChoice = villainChoice([randomNum], []);
+  const evilDiceChoice = randomNum;
   showEvilDieImage(evilDiceChoice);
 
   hidePlayerRoundTwoImages();
@@ -290,7 +290,7 @@ document.getElementById("roundTwoSpockButton").addEventListener("click", functio
 
 document.getElementById("roundTwoLizardButton").addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 5) + 1;
-  const evilDiceChoice = villainChoice([randomNum], []);
+  const evilDiceChoice = randomNum;
   showEvilDieImage(evilDiceChoice);
 
   hidePlayerRoundTwoImages();
@@ -301,6 +301,9 @@ document.getElementById("roundTwoLizardButton").addEventListener("click", functi
 
 
 document.getElementById("gameOver").addEventListener("click", function() {
+  location.reload();
+});
+document.getElementById("Congratulations!").addEventListener("click", function() {
   location.reload();
 });
 
@@ -325,10 +328,10 @@ function roundTwoGameEventHandler(playerChoice, villainChoiceResult) {
   const gameStatus = gameTracker(result);
 
   if (gameStatus === "Next Round!") {
-    document.getElementById("roundOne").classList.add("hidden");
-    document.getElementById("nextRound").classList.remove("hidden");    
+    document.getElementById("roundTwo").classList.add("hidden");
+    document.getElementById("Congratulations!").classList.remove("hidden");
   } else if (gameStatus === "Game over") {
-    document.getElementById("roundOne").classList.add("hidden");
+    document.getElementById("roundTwo").classList.add("hidden");
     document.getElementById("gameOver").classList.remove("hidden");
   } else {
     document.getElementById("roundTwoGameStatus").innerText = gameStatus;
