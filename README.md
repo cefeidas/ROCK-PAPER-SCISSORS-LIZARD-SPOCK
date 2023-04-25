@@ -1,108 +1,123 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Rock-Paper-Scissors-Spock-Lizard Game with Two Challenging Rounds
+This is a fun and challenging browser-based game of Rock-Paper-Scissors-Spock-Lizard, an extended version of the classic Rock-Paper-Scissors game. The game is played between the user and a computer opponent, and consists of two exciting rounds that progressively increase in difficulty. With each round, the computer opponent's decision-making becomes more intelligent, providing an engaging and enjoyable experience for players of all ages.
+## Features
 
-Welcome cefeidas,
+### Header
+The header section includes the game title and a cheat sheet image, providing a quick visual reference of the game rules to the player.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Header Image](assets/images/header_image.JPG)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+### Introduction
+An introductory section features a brief explanation and a video tutorial to help players understand the game mechanics.
 
-## Gitpod Reminders
+![Introduction Image](assets/images/Introduction_image.JPG)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Round One
+#### Title of the round
+A distinct title for the first round.
 
-`python3 -m http.server`
+#### Opponent
+Name and brief description of the computer opponent for Round One, along with an image to represent them.
 
-A blue button should appear to click: _Make Public_,
+![Opponent Image](assets/images/opponent1_image.JPG)
 
-Another blue button should appear to click: _Open Browser_.
+#### Player Column
+- All five buttons (Rock, Paper, Scissors, Spock, Lizard) for the user to choose from.
+- The player's choice will be displayed below the buttons once a selection is made.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Player Column Image](assets/images/player_column_image.JPG)
 
-A blue button should appear to click: _Make Public_,
+#### Score Screen
+A dedicated section to display the current score, including wins and losses.
 
-Another blue button should appear to click: _Open Browser_.
+![Score Screen Image](assets/images/Score_screen.JPG)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Villain Column
+A column analogous to the player column, showing the computer opponent's choice.
 
-To log into the Heroku toolbelt CLI:
+![Villain Column Image](assets/images/villain_column_image.JPG)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Round Two
+A section similar to Round One, featuring a more challenging computer opponent and updated content accordingly.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Round Two Image](assets/images/round_two.JPG)
 
-------
+### Control Buttons
+The following buttons will appear based on specific game conditions:
 
-## Release History
+- **Game Over**: If the player accumulates 3 defeats in any given round, the Game Over button will appear.
+- **Next Round**: If the player accumulates 3 victories in Round One, the Next Round button will appear.
+- **Congratulations!**: If the player accumulates 3 victories in Round Two, the Congratulations! button will appear.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Control Buttons Image](assets/images/control_button.JPG)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Rules
+In the Rock-Paper-Scissors-Spock-Lizard game, players face off against a computer-controlled opponent in a series of matches. The objective is to win three matches within a round. Each match consists of both the player and the computer opponent choosing one of the five possible options: Rock, Paper, Scissors, Spock, or Lizard. The choices are then compared to determine the winner of the match.
+If both the player and the opponent choose the same option, the match is considered a tie, and no points are awarded to either side. To win a match, a player's choice must defeat the opponent's choice according to the following rules:
+-	Rock crushes Scissors: Rock wins against Scissors.
+-	Scissors cuts Paper: Scissors wins against Paper.
+-	Paper covers Rock: Paper wins against Rock.
+-	Rock crushes Lizard: Rock wins against Lizard.
+-	Lizard poisons Spock: Lizard wins against Spock.
+-	Spock smashes Scissors: Spock wins against Scissors.
+-	Scissors decapitates Lizard: Scissors wins against Lizard.
+-	Lizard eats Paper: Lizard wins against Paper.
+-	Paper disproves Spock: Paper wins against Spock.
+-	Spock vaporizes Rock: Spock wins against Rock.
+The first player to reach three victories within a round wins that round. If the player wins the first round, they will advance to the second round, which features a more challenging computer opponent. To win the game, the player must also win three matches within the second round.
+##Rounds
+The game has two rounds, each with a unique challenge:
+###Round 1
+In the first round, the computer opponent always choses the same option: Spock. This round serves as a warm-up and helps players familiarize themselves with the extended game mechanics.
+###Round 2
+In the second round, the computer opponent becomes more intelligent, using a random pattern. This round significantly increases the difficulty and provides a more engaging gameplay experience. 
+##Installation
+No installation is required. Simply download the project and open the index.html file in a modern web browser.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Testing
+We have thoroughly tested the code using the following tools:
+- W3C validator for HTML
+- (Jigsaw) validator for CSS
+- JSHint validator for JavaScript
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Additionally, we have manually tested every button, link, and combination in the game, ensuring that it scored correctly. The program has also been tested to ensure it looks good on all Google Chrome Developer Tools available simulation devices.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Deployment
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+In this section, we describe the process of deploying the project to a hosting platform, specifically GitHub Pages.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The site was deployed to GitHub Pages using the following steps:
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+1. In the GitHub repository, navigate to the **Settings** tab.
+2. From the **Source** section drop-down menu, select the **Master Branch**.
+3. Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The live link can be found here - [Add the live link here]
+## Credits
+This Rock-Paper-Scissors-Spock-Lizard game implementation was inspired by various sources. We would like to give credit to the following:
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- **Image**: The cheat sheet image used in the header section of the game is based on the image found on Wikimedia Commons, titled "Rock_paper_scissors_lizard_spock.svg". The image is available under a Creative Commons license, and can be found at the following link: [https://commons.wikimedia.org/wiki/File:Rock_paper_scissors_lizard_spock.svg](https://commons.wikimedia.org/wiki/File:Rock_paper_scissors_lizard_spock.svg)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- **Video**: The introduction video explaining the game rules is sourced from the YouTube channel "Samuel Duzett". The video, titled "How to play Rock Paper Scissors Lizard Spock", provides a clear and concise explanation of the game mechanics. The video can be viewed at the following link: [https://www.youtube.com/watch?v=zjoVuV8EeOU&t=4s](https://www.youtube.com/watch?v=zjoVuV8EeOU&t=4s)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- **Bootstrap 5**: This project uses Bootstrap 5 to create responsive columns and design elements throughout the game.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Upcoming Feature
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+We are constantly working to improve and expand the game. Here's an exciting new feature we have planned:
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Round Three: The Telepath
 
-------
+In the third round, the computer opponent will be even more challenging. The opponent, called "The Telepath", will use a combination of randomness and the optimal choice to beat the player, making the odds lean more heavily against the player. This round will test the player's luck against an increasingly unpredictable opponent and further enhance the gameplay experience.
 
-## FAQ about the uptime script
+Stay tuned for this exciting new feature!
+## Contributing
+Contributions to this project are welcome. If you have ideas or suggestions for improvements, please feel free to open an issue or submit a pull request.
 
-**Why have you added this script?**
+To submit a pull request, follow these steps:
+1. Fork the repository and create a new branch for your changes
+2. Make the desired changes in your branch
+3. Commit and push your changes to your forked repository
+4. Create a pull request, detailing the changes made and their purpose
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+Please ensure that your code is well-commented and adheres to the project's style guidelines.
