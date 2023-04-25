@@ -18,36 +18,11 @@ function villainChoice(list1, list2) {
     return combinedList[randomIndex];
   }
 
-/*This would be the behaviour of the first opponent, the disabled pidgeon. Due to the limited intellectual capabilities of birds, it will always be 5 (Spock). The chances of winning against a person are 0%.*/
-const result1 = villainChoice([5], []);
-console.log("Resultado 1:", result1);
 
-/*This would be the behaviour of the second opponent, the evil dice. Due to its random nature, it will always give a random choice. The chances of winning are 1/5*/
-const randomNum = Math.floor(Math.random() * 5) + 1;
-const result2 = villainChoice([randomNum], []);
-console.log("Result2:")
-
-/*This would be the behaviour of the third opponent, the telepath. This opponent can sometimes read the player's mind. Because of that, it gives a random combination between a random choice and the correct choice. The chances of winning are 3/7. The sense of difficult increases.*/
-function telepath(num) {
-  switch (num) {
-    case 1:
-      return [2, 5];
-    case 2:
-      return [3, 4];
-    case 3:
-      return [1, 5];
-    case 4:
-      return [1, 3];
-    case 5:
-      return [2, 4];
-    default:
-      return [];
-  }
-}
 const list1 = [1, 2, 3, 4, 5];
 const list2 = telepath();
 const result3 = villainChoice(list1, list2);
-console.log("Resultado 3:", result3)
+console.log("Resultado 3:", result3);
 
 function whoWins(num1, num2) {
 /*I found out that the logic behind this game is: 
@@ -97,11 +72,11 @@ function gameTracker(result) {
 }
 
 /*In order to feed every function with data, I created the first source of info. It will be player choice, given by pressing any of the numbers available*/
-const playerRoundOneChoiceRock = document.getElementById('playerRoundOneChoiceRock')
-const playerRoundOneChoicePaper = document.getElementById('playerRoundOneChoicePaper')
-const playerRoundOneChoiceScissors = document.getElementById('playerRoundOneChoiceScissors')
-const playerRoundOneChoiceLizard = document.getElementById('playerRoundOneChoiceLizard')
-const playerRoundOneChoiceSpock = document.getElementById('playerRoundOneChoiceSpock')
+const playerRoundOneChoiceRock = document.getElementById('playerRoundOneChoiceRock');
+const playerRoundOneChoicePaper = document.getElementById('playerRoundOneChoicePaper');
+const playerRoundOneChoiceScissors = document.getElementById('playerRoundOneChoiceScissors');
+const playerRoundOneChoiceLizard = document.getElementById('playerRoundOneChoiceLizard');
+const playerRoundOneChoiceSpock = document.getElementById('playerRoundOneChoiceSpock');
 const pidgeonRoundOneChoiceRock = document.getElementById("pidgeonRoundOneChoiceRock");
 const pidgeonRoundOneChoicePaper = document.getElementById("pidgeonRoundOneChoicePaper");
 const pidgeonRoundOneChoiceScissors = document.getElementById("pidgeonRoundOneChoiceScissors");
@@ -199,11 +174,11 @@ const roundTwo = document.getElementById("roundTwo");
 
 
 /*In order to feed every function with data, I created the first source of info. It will be player choice, given by pressing any of the numbers available*/
-const playerRoundTwoChoiceRock = document.getElementById('playerRoundTwoChoiceRock')
-const playerRoundTwoChoicePaper = document.getElementById('playerRoundTwoChoicePaper')
-const playerRoundTwoChoiceScissors = document.getElementById('playerRoundTwoChoiceScissors')
-const playerRoundTwoChoiceLizard = document.getElementById('playerRoundTwoChoiceLizard')
-const playerRoundTwoChoiceSpock = document.getElementById('playerRoundTwoChoiceSpock')
+const playerRoundTwoChoiceRock = document.getElementById('playerRoundTwoChoiceRock');
+const playerRoundTwoChoicePaper = document.getElementById('playerRoundTwoChoicePaper');
+const playerRoundTwoChoiceScissors = document.getElementById('playerRoundTwoChoiceScissors');
+const playerRoundTwoChoiceLizard = document.getElementById('playerRoundTwoChoiceLizard');
+const playerRoundTwoChoiceSpock = document.getElementById('playerRoundTwoChoiceSpock');
 const evilDieRoundTwoChoiceRock = document.getElementById("evilDieRoundTwoChoiceRock");
 const evilDieRoundTwoChoicePaper = document.getElementById("evilDieRoundTwoChoicePaper");
 const evilDieRoundTwoChoiceScissors = document.getElementById("evilDieRoundTwoChoiceScissors");
