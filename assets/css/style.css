@@ -171,3 +171,27 @@ button:hover {
     margin: auto;
   }
 
+@media (max-width: 930px) {
+    #cheatSheet {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+    }
+  
+    #pidgeon,
+    #evildie {
+      display: none;
+    }
+    p {
+        font-size: 2rem;
+      }
+    #gameStatus {
+        font-size: 2rem
+    }
+  }
+  
+  
+  

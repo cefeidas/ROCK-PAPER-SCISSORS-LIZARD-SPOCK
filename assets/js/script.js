@@ -1,5 +1,7 @@
+console.log('Página cargada y script.js en ejecución');
+
 document.addEventListener('DOMContentLoaded', function () {
-    const startBtn = document.getElementById('start-btn');
+    let startBtn = document.getElementById('start-btn');
     const instructions = document.getElementById('Instructions');
     const roundOne = document.getElementById('roundOne');
 
@@ -240,10 +242,10 @@ function showEvilDieImage(choice) {
       evilDieRoundTwoChoiceScissors.classList.remove('hidden');
       break;
     case 4:
-      evilDieRoundTwoChoiceLizard.classList.remove('hidden');
+      evilDieRoundTwoChoiceSpock.classList.remove('hidden');      
       break;
     case 5:
-      evilDieRoundTwoChoiceSpock.classList.remove('hidden');
+      evilDieRoundTwoChoiceLizard.classList.remove('hidden');      
       break;
   }
 }
@@ -324,8 +326,12 @@ function roundOneGameEventHandler(playerChoice) {
 }
 
 function roundTwoGameEventHandler(playerChoice, villainChoiceResult) {
+  console.log("Player choice:", playerChoice);
+  console.log("Villain choice:", villainChoiceResult);
   const result = whoWins(playerChoice, villainChoiceResult);
+  console.log("Result:", result); 
   const gameStatus = gameTracker(result);
+  console.log("Result:", result); 
 
   if (gameStatus === "Next Round!") {
     document.getElementById("roundTwo").classList.add("hidden");
