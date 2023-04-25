@@ -303,7 +303,7 @@ document.getElementById("roundTwoLizardButton").addEventListener("click", functi
 document.getElementById("gameOver").addEventListener("click", function() {
   location.reload();
 });
-document.getElementById("Congratulations!").addEventListener("click", function() {
+document.getElementById("Congratulations").addEventListener("click", function() {
   location.reload();
 });
 
@@ -333,7 +333,7 @@ function roundTwoGameEventHandler(playerChoice, villainChoiceResult) {
 
   if (gameStatus === "Next Round!") {
     document.getElementById("roundTwo").classList.add("hidden");
-    document.getElementById("Congratulations!").classList.remove("hidden");
+    document.getElementById("Congratulations").classList.remove("hidden");
   } else if (gameStatus === "Game over") {
     document.getElementById("roundTwo").classList.add("hidden");
     document.getElementById("gameOver").classList.remove("hidden");

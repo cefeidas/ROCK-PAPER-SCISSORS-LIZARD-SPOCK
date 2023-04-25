@@ -169,4 +169,7 @@ button:hover {
     #gameStatus {
         font-size: 2rem;
     }
+    #roundTwoGameStatus {
+        font-size: 2rem;
+    }
 }
