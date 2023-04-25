@@ -14,25 +14,6 @@ header {
     margin-top: 5%;
 }
 
-.header-content {
-    text-align: center;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #fff;
-    color: #333;
-    text-align: center;
-    padding: 1rem;
-}
-
 h1 {
     display: inline-block;
     margin: 0;
@@ -46,6 +27,17 @@ h2 {
 
 p {
     margin: 2rem 2rem;
+}
+
+header {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 1rem;
+}
+
+.header-content {
+    text-align: center;
 }
 
 .content-embedded-video {
@@ -112,7 +104,6 @@ button:hover {
     width: 15%;
     height: auto;
     margin: 2%;
-
 }
 
 .singleImage {
@@ -124,21 +115,14 @@ button:hover {
     margin-right: auto;
 }
 
-#pidgeon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 10%;
-    height: auto;
-}
-
+#pidgeon,
 #evilDie {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 10%;
     height: auto;
-  }
+}
 
 #cheatSheet {
     display: block;
@@ -151,25 +135,17 @@ button:hover {
     z-index: 0;
 }
 
-#playerChoiceImages {
+#playerChoiceImages,
+#roundTwoPlayerChoiceImages {
     text-align: center;
-  }
+}
 
-  #playerChoiceImages .singleImage {
+#playerChoiceImages .singleImage,
+#roundTwoPlayerChoiceImages .singleImage {
     width: 20%;
     height: auto;
     margin: auto;
-  }
-
-  #roundTwoPlayerChoiceImages {
-    text-align: center;
-  }
-
-  #roundTwoPlayerChoiceImages .singleImage {
-    width: 20%;
-    height: auto;
-    margin: auto;
-  }
+}
 
 @media (max-width: 930px) {
     #cheatSheet {
@@ -180,18 +156,17 @@ button:hover {
         margin-right: auto;
         width: 20%;
     }
-  
+
     #pidgeon,
-    #evildie {
-      display: none;
+    #evilDie {
+        display: none;
     }
+
     p {
         font-size: 2rem;
-      }
-    #gameStatus {
-        font-size: 2rem
     }
-  }
-  
-  
-  
+
+    #gameStatus {
+        font-size: 2rem;
+    }
+}
