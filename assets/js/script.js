@@ -1,7 +1,6 @@
-console.log('Página cargada y script.js en ejecución');
-
 document.addEventListener('DOMContentLoaded', function () {
-    let startBtn = document.getElementById('start-btn');
+  /*EventListener added to the start button, the change the screen when clicking it.*/
+    let startBtn = document.getElementById('startBtn');
     const instructions = document.getElementById('Instructions');
     const roundOne = document.getElementById('roundOne');
 
@@ -20,7 +19,7 @@ function villainChoice(list1, list2) {
 
 /*This would be the behaviour of the first opponent, the disabled pidgeon. Due to the limited intellectual capabilities of birds, it will always be 5 (Spock). The chances of winning against a person are 0%.*/
 const result1 = villainChoice([5], []);
-console.log("Resultado 1:", result1);
+
 
 /*This would be the behaviour of the second opponent, the evil dice. Due to its random nature, it will always give a random choice. The chances of winning are 1/5*/
 const randomNum = Math.floor(Math.random() * 5) + 1;
@@ -45,14 +44,15 @@ function telepath(num) {
 const list1 = [1, 2, 3, 4, 5];
 const list2 = telepath();
 const result3 = villainChoice(list1, list2);
-console.log("Resultado 3:", result3);
+
 
 function whoWins(num1, num2) {
 /*I found out that the logic behind this game is: 
 If the difference between both numbers is odd, the bigger one wins
 If the difference between both numbers is even:
 If both numbers are the same, no one wins
-If both numbers are not the same, the smaller one wins. Using that, I created the logic to decide the winner.*/
+If both numbers are not the same, the smaller one wins. Using that, I created the logic to decide the winner.
+The function applies this logic to determine the winner.*/
 const difference = Math.abs(num1 - num2);
   
 if (difference % 2 === 1) { 
@@ -108,6 +108,7 @@ const pidgeonRoundOneChoiceSpock = document.getElementById("pidgeonRoundOneChoic
 
 
 function hidePlayerImages() {
+  /*This function hides all player images.*/
   playerRoundOneChoiceRock.classList.add('hidden');
   playerRoundOneChoicePaper.classList.add('hidden');
   playerRoundOneChoiceScissors.classList.add('hidden');
@@ -117,6 +118,7 @@ function hidePlayerImages() {
 }
 
 function hideVillainImages() {
+  /*This function hides all villain images.*/
   pidgeonRoundOneChoiceRock.classList.add('hidden');
   pidgeonRoundOneChoicePaper.classList.add('hidden');
   pidgeonRoundOneChoiceScissors.classList.add('hidden');
@@ -126,6 +128,7 @@ function hideVillainImages() {
 }
 
 function showPidgeonImage(choice) {
+  /*This function shows pidgeon images.*/
   hideVillainImages();
   switch (choice) {
     case 1:
@@ -145,6 +148,8 @@ function showPidgeonImage(choice) {
       break;
   }
 }
+
+/*Add all eventListeners to all buttons*/
 
 document.getElementById("rockButton").addEventListener("click", function () {
   hidePlayerImages();
@@ -210,6 +215,7 @@ const evilDieRoundTwoChoiceSpock = document.getElementById("evilDieRoundTwoChoic
 
 
 function hidePlayerRoundTwoImages() {
+  /*This function hides all player images.*/
   playerRoundTwoChoiceRock.classList.add('hidden');
   playerRoundTwoChoicePaper.classList.add('hidden');
   playerRoundTwoChoiceScissors.classList.add('hidden');
@@ -219,6 +225,7 @@ function hidePlayerRoundTwoImages() {
 }
 
 function hideEvilDieImages() {
+  /*This function hides all villain images.*/
   evilDieRoundTwoChoiceRock.classList.add('hidden');
   evilDieRoundTwoChoicePaper.classList.add('hidden');
   evilDieRoundTwoChoiceScissors.classList.add('hidden');
@@ -228,6 +235,7 @@ function hideEvilDieImages() {
 }
 
 function showEvilDieImage(choice) {
+  /*This function shows evil die images.*/
   hideEvilDieImages();
   switch (choice) {
     case 1:
@@ -248,6 +256,7 @@ function showEvilDieImage(choice) {
   }
 }
 
+/*Add all eventListeners to all buttons*/
 document.getElementById("roundTwoRockButton").addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 5) + 1;
   const evilDiceChoice = randomNum;
@@ -308,6 +317,7 @@ document.getElementById("Congratulations").addEventListener("click", function() 
 });
 
 function roundOneGameEventHandler(playerChoice) {
+  /*This function handles a number of other functions*/
   const villainChoiceResult = villainChoice([4], []);
   const result = whoWins(playerChoice, villainChoiceResult);
   const gameStatus = gameTracker(result);
@@ -324,12 +334,9 @@ function roundOneGameEventHandler(playerChoice) {
 }
 
 function roundTwoGameEventHandler(playerChoice, villainChoiceResult) {
-  console.log("Player choice:", playerChoice);
-  console.log("Villain choice:", villainChoiceResult);
-  const result = whoWins(playerChoice, villainChoiceResult);
-  console.log("Result:", result); 
+  /*This function handles a number of other functions*/
+  const result = whoWins(playerChoice, villainChoiceResult); 
   const gameStatus = gameTracker(result);
-  console.log("Result:", result); 
 
   if (gameStatus === "Next Round!") {
     document.getElementById("roundTwo").classList.add("hidden");

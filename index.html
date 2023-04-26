@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <div class="header-content">
+        <div class="headerContent">
             <h1>ROCK, PAPER, SCISSORS, LIZARD, SPOCK</h1>
             <img id="cheatSheet" src="assets/images/cheatsheet.png" alt="Game mechanics cheat-sheet">
         </div>
@@ -24,8 +24,8 @@
             <p>If you are unfamiliar with the rules of the game, please watch this tutorial:</p>
             <br><br>
         </section>
-        <section class="content-embedded-video">
-            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/zjoVuV8EeOU" title="Game explanation">
+        <section class="contentEmbeddedVideo">
+            <iframe class="responsiveIframe" src="https://www.youtube.com/embed/zjoVuV8EeOU" title="Game explanation">
             </iframe>
         </section>
         <section>
@@ -36,7 +36,7 @@
             <br><br>
         </section>
         <section>
-        <button id=start-btn class="screenChangeButton">Start</button>
+        <button id=startBtn class="screenChangeButton">Start</button>
         </section>
     </div>
     <div id="roundOne" class='hidden container-fluid'>
@@ -45,30 +45,31 @@
                 <br><br><h2 class="col-12 text-center">Round One: Disabled pidgeon!!</h2><br>
                 <img id="pidgeon" src="assets/images/pidgeon.png" alt="Cartoonish disabled Pidgeon">
                 <br><br>
+                <p class="villainDescription">This opponent is not the most brilliant.<p>
+                <p class="villainDescription">I heard it just watches Star Trek all day...</p>    
             </section>
         </div>
         <div class="row">
-            <section class="col-md-6 player-options">
+            <section class="col-md-6 playerOptions">
                 <p>Click one of the icons below.</p>
                 <p>If you are unsure about the rules, check out the cheat-sheet on the corner of the screen!</p>
                 <div>
-                    <button class="custom-button" id="rockButton">
+                    <button class="customButton" id="rockButton">
                         <img src="assets/images/Rock.jpg" alt="Rock">
                     </button>
-                    <button class="custom-button" id="paperButton">
+                    <button class="customButton" id="paperButton">
                      <img src="assets/images/Paper.jpg" alt="Paper">
                     </button>
-                    <button class="custom-button" id="scissorsButton">
+                    <button class="customButton" id="scissorsButton">
                         <img src="assets/images/Scissors.jpg" alt="Scissors">
                     </button>
-                    <button class="custom-button" id="spockButton">
+                    <button class="customButton" id="spockButton">
                         <img src="assets/images/Spock.jpg" alt="Spock">
                     </button>
-                    <button class="custom-button" id="lizardButton">
+                    <button class="customButton" id="lizardButton">
                         <img src="assets/images/Lizard.jpg" alt="Lizard">
-                    </button>
-                    
-                    </div>
+                    </button>                    
+                </div>
                     <div id="playerChoiceImages">
                         <img id="playerRoundOneChoiceRock" class="hidden singleImage" src="assets/images/Rock.jpg" alt="Rock">
                         <img id="playerRoundOneChoicePaper"class="hidden singleImage" src="assets/images/Paper.jpg" alt="Paper">
@@ -77,9 +78,10 @@
                         <img id="playerRoundOneChoiceLizard" class="hidden singleImage" src="assets/images/Lizard.jpg" alt="Lizard">
                         
                     </div>                    
-                    <div id="gameStatus">
+                    <div id="gameStatus"></div>
+                        
             </section>
-            <section class="col-md-6 villain-options"> 
+            <section class="col-md-6 villainOptions"> 
                 <div>
                     <p>Your opponent will also chose one.</p>
                     <p>Behold!</p>
@@ -111,42 +113,42 @@
             <section>
                 <br><br><h2 class="col-12 text-center">Round Two: Evil die!!</h2><br>
                 <img id="evilDie" src="assets/images/evilDie.png" alt="Cartoonish evil die">
-                <br><br>
+                <p class="villainDescription">This opponent is unpredictable.<p>
+                <p class="villainDescription">You will need some luck to beat him!</p>
             </section>
         </div>
         <div class="row">
-            <section class="col-md-6 player-options">
+            <section class="col-md-6 playerOptions">
                 <p>Click one of the icons below.</p>
                 <p>If you are unsure about the rules, check out the cheat-sheet on the corner of the screen!</p>
                 <div>
-                    <button class="custom-button" id="roundTwoRockButton">
+                    <button class="customButton" id="roundTwoRockButton">
                         <img src="assets/images/Rock.jpg" alt="Rock">
                     </button>
-                    <button class="custom-button" id="roundTwoPaperButton">
+                    <button class="customButton" id="roundTwoPaperButton">
                      <img src="assets/images/Paper.jpg" alt="Paper">
                     </button>
-                    <button class="custom-button" id="roundTwoScissorsButton">
+                    <button class="customButton" id="roundTwoScissorsButton">
                         <img src="assets/images/Scissors.jpg" alt="Scissors">
                     </button>
-                    <button class="custom-button" id="roundTwoSpockButton">
+                    <button class="customButton" id="roundTwoSpockButton">
                         <img src="assets/images/Spock.jpg" alt="Spock">
                     </button>
-                    <button class="custom-button" id="roundTwoLizardButton">
+                    <button class="customButton" id="roundTwoLizardButton">
                         <img src="assets/images/Lizard.jpg" alt="Lizard">
                     </button>
                     
-                    </div>
-                    <div id="roundTwoPlayerChoiceImages">
-                        <img id="playerRoundTwoChoiceRock" class="hidden singleImage" src="assets/images/Rock.jpg" alt="Rock">
-                        <img id="playerRoundTwoChoicePaper"class="hidden singleImage" src="assets/images/Paper.jpg" alt="Paper">
-                        <img id="playerRoundTwoChoiceScissors" class="hidden singleImage" src="assets/images/Scissors.jpg" alt="Scissors">
-                        <img id="playerRoundTwoChoiceSpock" class="hidden singleImage"  src="assets/images/Spock.jpg" alt="Spock">
-                        <img id="playerRoundTwoChoiceLizard" class="hidden singleImage" src="assets/images/Lizard.jpg" alt="Lizard">
-                        
-                    </div>                    
-                    <div id="roundTwoGameStatus">
+                </div>
+                <div id="roundTwoPlayerChoiceImages">
+                    <img id="playerRoundTwoChoiceRock" class="hidden singleImage" src="assets/images/Rock.jpg" alt="Rock">
+                    <img id="playerRoundTwoChoicePaper"class="hidden singleImage" src="assets/images/Paper.jpg" alt="Paper">
+                    <img id="playerRoundTwoChoiceScissors" class="hidden singleImage" src="assets/images/Scissors.jpg" alt="Scissors">
+                    <img id="playerRoundTwoChoiceSpock" class="hidden singleImage"  src="assets/images/Spock.jpg" alt="Spock">
+                    <img id="playerRoundTwoChoiceLizard" class="hidden singleImage" src="assets/images/Lizard.jpg" alt="Lizard">                        
+                </div>                    
+                <div id="roundTwoGameStatus"></div>
             </section>
-            <section class="col-md-6 villain-options"> 
+            <section class="col-md-6 villainOptions"> 
                 <div>
                     <p>Your opponent will also chose one.</p>
                     <p>Behold!</p>
@@ -165,12 +167,9 @@
                         <img id="evilDieRoundTwoChoicePaper"class="hidden singleImage" src="assets/images/Paper.jpg" alt="Paper">
                         <img id="evilDieRoundTwoChoiceScissors" class="hidden singleImage" src="assets/images/Scissors.jpg" alt="Scissors">
                         <img id="evilDieRoundTwoChoiceSpock" class="hidden singleImage"  src="assets/images/Spock.jpg" alt="Spock">
-                        <img id="evilDieRoundTwoChoiceLizard" class="hidden singleImage" src="assets/images/Lizard.jpg" alt="Lizard">
-                        
+                        <img id="evilDieRoundTwoChoiceLizard" class="hidden singleImage" src="assets/images/Lizard.jpg" alt="Lizard">                        
                     </div>
-
-                </div>
-                
+                </div>                
             </section>
         </div>
     </div>
